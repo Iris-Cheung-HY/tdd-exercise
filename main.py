@@ -55,4 +55,39 @@ VALID_CARDS = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace']
 #     return score
 
 # For 7th test
+# def blackjack_score(hand):
+#     score = 0
+#     for card in hand:
+#         score += card
+#         if score > 21:
+#             print("You busted")
+#     return score
+
+
+# For 8th test and 9th test
+def blackjack_score(hand):
+    score = 0
+    aces_count = 0
+    for card in hand:
+        if card in VALID_CARDS:
+            if card in ["Jack", "Queen", "King"]:
+                score += 10
+            elif card == "Ace":
+                aces_count += 1
+            else:
+                score += card
+
     
+    score += 11 * aces_count
+    while score > 21:
+        score -= 10
+
+    return score
+
+
+
+
+
+
+
+

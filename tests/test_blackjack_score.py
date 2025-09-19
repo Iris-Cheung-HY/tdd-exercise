@@ -60,7 +60,7 @@ def test_returns_invalid_for_invalid_cards():
     
 
 
-#@pytest.mark.skip(reason="no way of currently testing this")
+@pytest.mark.skip(reason="no way of currently testing this")
 def test_returns_invalid_for_list_length_greater_than_5():
   # Arrange
   hand = [4,5,6,7,8,9]
@@ -73,12 +73,24 @@ def test_returns_invalid_for_list_length_greater_than_5():
 
 @pytest.mark.skip(reason="no way of currently testing this")
 def test_returns_bust_for_scores_over_21():
-  pass
+  hand = [9, 8, 7]
 
-@pytest.mark.skip(reason="no way of currently testing this")
+  score = blackjack_score(hand)
+
+  assert ("You Busted")
+
+#@pytest.mark.skip(reason="no way of currently testing this")
 def test_returns_12_for_ace_ace_king():
-  pass
+  hand = ["Ace", "Ace", "King"]
 
-@pytest.mark.skip(reason="logic not yet implemented")
+  score = blackjack_score(hand)
+
+  assert score == 12
+
+#@pytest.mark.skip(reason="logic not yet implemented")
 def test_returns_14_for_ace_ace_ace_ace():
-    pass
+  hand = ["Ace", "Ace", "Ace", "Ace",]
+
+  score = blackjack_score(hand)
+
+  assert score == 14
